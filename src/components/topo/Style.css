@@ -9,15 +9,15 @@
 }
 
 .logo {
-  background: #a83218;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  padding: 8px 20px;
+  background: #fff;
+  padding: 2px 5px;
   border-radius: 999px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  
 }
-
+.logo-img {
+    width: 250px; 
+    height: auto; 
+}
 .menu {
   display: flex;
   gap: 20px;

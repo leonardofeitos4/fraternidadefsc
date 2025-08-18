@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Style.css";
-import menuIcon from "/public/icon/menu.png"; 
+import menuIcon from "../../assets/icon/menu.png";
+import logoFraternidade from "../../assets/img/logo.svg";
 
 function Topo() {
   const [menuAberto, setMenuAberto] = useState(false);
@@ -8,8 +10,13 @@ function Topo() {
   return (
     <header className="topo">
       <div className="logo">
-        <a href="/">
-        </a>
+        <Link to="/">
+          <img
+            className="logo-img"
+            src={logoFraternidade}
+            alt="Logo da Fraternidade"
+          />
+        </Link>
       </div>
 
       <button
@@ -20,11 +27,11 @@ function Topo() {
       </button>
 
       <nav className={`menu ${menuAberto ? "ativo" : ""}`}>
-        <a href="/">Página Inicial</a>
-        <a href="/Institucional">Institucional</a>
-        <a href="/NossosProjetos">Nossos Projetos</a>
-        <a href="/NossaMissao">Nossa Missão</a>
-        <a href="/Doador">Seja um Doador</a>
+        <Link to="/">Página Inicial</Link>
+        <Link to="/Institucional">Institucional</Link>
+        <Link to="/NossosProjetos">Nossos Projetos</Link>
+        <Link to="/NossaMissao">Nossa Missão</Link>
+        <Link to="/Doador">Seja um Doador</Link>
       </nav>
     </header>
   );
