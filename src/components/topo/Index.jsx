@@ -1,10 +1,8 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Style.css";
 import menuIcon from "../../assets/icon/menu.png";
 import logoFraternidade from "../../assets/img/logo.svg";
-
 
 function Topo() {
   const [menuAberto, setMenuAberto] = useState(false);
@@ -12,7 +10,7 @@ function Topo() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) { // quando rolar mais de 50px
+      if (window.scrollY > 50) {
         setScrollTopo(true);
       } else {
         setScrollTopo(false);
@@ -26,18 +24,16 @@ function Topo() {
     <header className={`topo ${scrollTopo ? "fixo-transparente" : ""}`}>
       <div className="logo">
         <Link to="/">
-
           <img
             className="logo-img"
             src={logoFraternidade}
             alt="Logo da Fraternidade"
           />
-
         </Link>
       </div>
 
       <button className="menu-toggle" onClick={() => setMenuAberto(!menuAberto)}>
-        <img src="/img/menu.png" alt="Menu" className="icon-menu" />
+        <img src={menuIcon} alt="Menu" className="icon-menu" />
       </button>
 
       <nav className={`menu ${menuAberto ? "ativo" : ""}`}>

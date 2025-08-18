@@ -10,9 +10,11 @@ import Carrossel3 from "../../assets/img/Carrossel3.jpg";
 import Carrossel4 from "../../assets/img/Carrossel4.jpg";
 import SantaClaraeJesus from "../../assets/img/SantaClaraeJesus.png";
 import Pix from "../../assets/img/pix.svg";
+import SantaClaraBg from "../../assets/img/SantaClara.svg";
 
 function Home() {
-  const mainSliderSettings = {
+  // Configuração padrão do slider grande
+  const sliderSettings = {
     dots: true,
     infinite: true,
     speed: 600,
@@ -23,62 +25,68 @@ function Home() {
     arrows: true,
   };
 
+  // Configuração do carrossel pequeno (3 imagens visíveis)
   const smallSliderSettings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2500,
     arrows: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
-    <div>
-      {/* === Primeira Seção - Slider Grande === */}
-      <div className="home-container">
+    <div className="home-page">
+      {/* === Primeira Seção - Slider Grande com background === */}
+      <div
+        className="home-container"
+        style={{ backgroundImage: `url(${SantaClaraBg})` }}
+      >
         <div className="home-left">
           <h1>Com <br /> prontidão e<br /> solicitude, amar e servir.</h1>
-          <Link to="/NossaMissao">
+          <Link to="/Institucional">
             <button className="btn-missao">Conheça nossa história</button>
           </Link>
         </div>
 
         <div className="home-right">
-          <Slider {...mainSliderSettings}>
-            <div><img src={Carrossel1} alt="Carrossel 1" /></div>
-            <div><img src={Carrossel2} alt="Carrossel 2" /></div>
-            <div><img src={Carrossel3} alt="Carrossel 3" /></div>
-            <div><img src={Carrossel4} alt="Carrossel 4" /></div>
+          <Slider {...sliderSettings}>
+            {[Carrossel1, Carrossel2, Carrossel3, Carrossel4].map((img, idx) => (
+              <div key={idx}>
+                <img src={img} alt={`Carrossel ${idx + 1}`} />
+              </div>
+            ))}
           </Slider>
         </div>
       </div>
 
       <div className="section-divider"></div>
 
-      {/* === Segunda Seção - 3 Carrosséis Pequenos === */}
+      {/* === Seção de 3 carrosséis pequenos em um único carrossel === */}
       <div className="three-carousel-section">
-        <div className="small-carousel">
-          <Slider {...smallSliderSettings}>
-            <div><img src={Carrossel1} alt="Carrossel 1A" /></div>
-            <div><img src={Carrossel2} alt="Carrossel 1B" /></div>
-          </Slider>
-        </div>
-
-        <div className="small-carousel">
-          <Slider {...smallSliderSettings}>
-            <div><img src={Carrossel3} alt="Carrossel 2A" /></div>
-            <div><img src={Carrossel4} alt="Carrossel 2B" /></div>
-          </Slider>
-        </div>
-
-        <div className="small-carousel">
-          <Slider {...smallSliderSettings}>
-            <div><img src={Carrossel3} alt="Carrossel 3A" /></div>
-            <div><img src={Carrossel2} alt="Carrossel 3B" /></div>
-          </Slider>
-        </div>
+        <Slider {...smallSliderSettings}>
+          {[Carrossel1, Carrossel2, Carrossel3, Carrossel4].map((img, idx) => (
+            <div className="small-carousel" key={idx}>
+              <img src={img} alt={`Pequeno ${idx + 1}`} />
+            </div>
+          ))}
+        </Slider>
       </div>
 
       <div className="three-carousel-texts">
@@ -92,15 +100,15 @@ function Home() {
 
       <div className="section-divider"></div>
 
-      {/* === Última Seção - COMO APOIAR === */}
+      {/* === Seção Como Apoiar === */}
       <div className="support-section">
         <div className="support-text">
           <h2>COMO APOIAR</h2>
           <p>
-            Para que a missão da Fraternidade continue a crescer e alcançar mais vidas,
-            contamos com a generosidade de benfeitores, voluntários e instituições parceiras.
-            Toda ajuda é bem-vinda, seja por meio de doações, projetos em parceria,
+            Para que a missão da Fraternidade continue a crescer e alcançar mais vidas, contamos com a generosidade de benfeitores,
+            voluntários e instituições parceiras. Toda ajuda é bem-vinda, seja por meio de doações, projetos em parceria,
             divulgação de nossas ações ou colaboração com recursos materiais e humanos.
+
           </p>
           <img
             src={SantaClaraeJesus}
@@ -117,4 +125,3 @@ function Home() {
 }
 
 export default Home;
-

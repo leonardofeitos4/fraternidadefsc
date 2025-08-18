@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./index.css";
-
 import Topo from "./components/Topo/Index.jsx";
 import Rodape from "./components/Rodape/Index.jsx";
 
@@ -18,9 +17,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <div className="flex flex-col min-h-screen">
+      <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
         <Topo />
-        <main className="flex-grow">
+        <main style={{ flexGrow: 1 }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Institucional" element={<Institucional />} />
@@ -32,5 +31,5 @@ root.render(
         <Rodape />
       </div>
     </BrowserRouter>
-  </StrictMode>,
+  </React.StrictMode>
 );
