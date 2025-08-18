@@ -1,6 +1,10 @@
-import { useState, useEffect } from "react";
+
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Style.css";
+import menuIcon from "../../assets/icon/menu.png";
+import logoFraternidade from "../../assets/img/logo.svg";
+
 
 function Topo() {
   const [menuAberto, setMenuAberto] = useState(false);
@@ -22,7 +26,13 @@ function Topo() {
     <header className={`topo ${scrollTopo ? "fixo-transparente" : ""}`}>
       <div className="logo">
         <Link to="/">
-          <img className="logo-img" src="/src/assets/img/logo.svg" alt="Logo da Fraternidade" />
+
+          <img
+            className="logo-img"
+            src={logoFraternidade}
+            alt="Logo da Fraternidade"
+          />
+
         </Link>
       </div>
 

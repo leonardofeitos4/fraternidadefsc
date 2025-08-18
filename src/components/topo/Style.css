@@ -24,13 +24,15 @@
   background: #fff;
   padding: 2px 5px;
   border-radius: 999px;
+
 }
+
 
 .logo-img {
-  width: 250px; 
-  height: auto; 
-}
+    width: 250px; 
+    height: auto; 
 
+}
 .menu {
   display: flex;
   gap: 20px;

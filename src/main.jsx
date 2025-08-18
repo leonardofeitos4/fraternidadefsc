@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./index.css";
+
 import Topo from "./components/Topo/Index.jsx";
 import Rodape from "./components/Rodape/Index.jsx";
 
@@ -32,5 +33,4 @@ root.render(
       </div>
     </BrowserRouter>
   </StrictMode>,
-)
-
+);
