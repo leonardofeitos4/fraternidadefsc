@@ -31,7 +31,6 @@ root.render(
         <Rodape />
       </div>
     </BrowserRouter>
-  </React.StrictMode>
-);
-
+  </StrictMode>,
+)
 

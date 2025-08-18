@@ -36,6 +36,7 @@ function Home() {
 
   return (
     <div>
+
       {/* === Primeira Seção - Slider Grande === */}
       <div className="home-container">
         <div className="home-left">
@@ -112,6 +113,8 @@ function Home() {
           <img src={Pix} alt="Como Apoiar" />
         </div>
       </div>
+
+
     </div>
   );
 }
