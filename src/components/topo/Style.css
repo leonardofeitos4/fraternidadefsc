@@ -1,3 +1,4 @@
+/* === Topo Geral === */
 .topo {
   display: flex;
   justify-content: space-between;
@@ -14,8 +15,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(119, 73, 34, 0.85); /* semitransparente */
-  backdrop-filter: blur(5px); /* efeito de desfoque atrás */
+  background-color: rgba(119, 73, 34, 0.85);
+  backdrop-filter: blur(5px);
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
@@ -23,15 +24,15 @@
   padding: 2px 5px;
 }
 
-
 .logo-img {
-    width: 100px; 
-    height: auto; 
-
+  width: 100px; 
+  height: auto; 
 }
+
 .menu {
   display: flex;
   gap: 20px;
+  align-items: center;
 }
 
 .menu a {
@@ -57,6 +58,54 @@
   height: 28px;
 }
 
+/* === Submenu Institucional === */
+.menu-institucional {
+  position: relative;
+  cursor: pointer;
+}
+
+.menu-institucional span {
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.menu-institucional:hover span {
+  color: #a83218;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;  /* posiciona logo abaixo do link */
+  left: 0;     /* alinha à esquerda do link */
+  background-color: #774922;
+  min-width: 180px;
+  flex-direction: column;
+  padding: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.submenu a {
+  display: block;
+  padding: 8px 20px;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.submenu a:hover {
+  background-color: #a83218;
+  color: #fff;
+}
+
+.menu-institucional:hover .submenu {
+  display: flex;
+}
+
+/* RESPONSIVIDADE MOBILE */
 @media (max-width: 768px) {
   .menu {
     display: none;
@@ -67,7 +116,6 @@
     background: #774922;
     width: 200px;
     padding: 12px;
-    border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     animation: slideDown 0.3s ease forwards;
@@ -88,6 +136,20 @@
 
   .menu-toggle {
     display: block;
+  }
+
+  .submenu {
+    position: relative;
+    top: 0;
+    left: 0;
+    box-shadow: none;
+    border-radius: 0;
+    display: none;
+    padding-left: 15px;
+  }
+
+  .menu-institucional .submenu.ativo {
+    display: flex;
   }
 }
 

@@ -106,7 +106,7 @@ function Home() {
   </div>
 
   <Link to="/NossosProjetos">
-    <button className="btn-missao large-btn">Nossos Projetos</button>
+    <button className="btn-missao large-btn">Conheça nossos Projetos</button>
   </Link>
 </div>
 

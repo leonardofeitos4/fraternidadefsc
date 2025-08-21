@@ -1,37 +1,106 @@
+/* === Institucional - Container Geral === */
 .institucional-container {
-  padding: 50px;
-  text-align: center;
-}
-
-.institucional-container h1 {
-  font-size: 3rem;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.institucional-container p {
-  font-size: 1.25rem;
-  color: #555;
-  margin-bottom: 30px;
-}
-
-.buttons-test {
+  position: relative;
+  width: 100%;
+  min-height: 600px; /* altura da seção, ajuste se necessário */
+  padding: 0 10%;
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: row; /* texto à esquerda, foto à direita */
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.btn-missao {
-  background-color: #774922;
-  color: #fff;
-  padding: 12px 28px;
-  border: none;
-  border-radius: 25px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
+/* overlay opcional */
+.institucional-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  z-index: 1;
 }
 
-.btn-missao:hover {
-  background-color: #5c3519;
+/* conteúdo da seção */
+.institucional-content {
+  position: relative;
+  z-index: 2;
+  width: 50%; /* texto ocupa metade esquerda */
+  padding-top: 40px; /* distância do topo */
+}
+
+.institucional-content h1 {
+  font-size: 2.5rem;
+  color: #111; /* texto mais escuro */
+  margin-bottom: 20px;
+  font-family: "Amatic SC", cursive; 
+}
+
+.institucional-content p {
+  font-size: 1.1rem;
+  color: #111; /* texto mais escuro */
+  line-height: 1.6;
+}
+
+/* foto à direita */
+.institucional-image {
+  position: relative;
+  z-index: 2;
+  width: 35%; /* diminui a largura da foto */
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px; /* afasta a foto do topo */
+}
+
+.institucional-image img {
+  width: 100%;
+  max-width: 250px; /* foto menor */
+  height: auto;
+  border-radius: 10px; 
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1024px) {
+  .institucional-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 5%;
+  }
+
+  .institucional-content,
+  .institucional-image {
+    width: 100%;
+  }
+
+  .institucional-content h1 {
+    font-size: 2rem;
+  }
+
+  .institucional-content p {
+    font-size: 1rem;
+  }
+
+  .institucional-image {
+    padding-top: 20px;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .institucional-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .institucional-content p {
+    font-size: 0.9rem;
+  }
+
+  .institucional-image img {
+    max-width: 200px;
+  }
 }

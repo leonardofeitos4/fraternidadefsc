@@ -1,0 +1,114 @@
+/* === Baluarte - Container Geral === */
+.baluarte-container {
+  width: 100%;
+  padding: 40px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Cabeçalho */
+.baluarte-header {
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 40px;
+}
+
+.baluarte-header h1 {
+  font-size: 2.5rem;
+  font-family: "Amatic SC", cursive;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.baluarte-header p {
+  font-size: 1.2rem;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* Subtítulo */
+.baluarte-subtitle {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.baluarte-subtitle h2 {
+  font-size: 2rem;
+  color: #111;
+  font-family: "Amatic SC", cursive;
+}
+
+/* Itens (imagem à esquerda, texto à direita) */
+.baluarte-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.baluarte-image {
+  width: 35%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.baluarte-image img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.baluarte-text {
+  width: 60%;
+  padding-left: 30px;
+}
+
+.baluarte-text p {
+  font-size: 1.1rem;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1024px) {
+  .baluarte-item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .baluarte-text {
+    width: 100%;
+    padding-left: 0;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .baluarte-image img {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .baluarte-header h1 {
+    font-size: 2rem;
+  }
+
+  .baluarte-header p {
+    font-size: 1rem;
+  }
+
+  .baluarte-subtitle h2 {
+    font-size: 1.5rem;
+  }
+
+  .baluarte-image img {
+    max-width: 200px;
+  }
+
+  .baluarte-text p {
+    font-size: 0.9rem;
+  }
+}

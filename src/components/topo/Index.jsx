@@ -6,6 +6,7 @@ import logoFraternidade from "../../assets/img/logooBranca.png";
 
 function Topo() {
   const [menuAberto, setMenuAberto] = useState(false);
+  const [submenuAberto, setSubmenuAberto] = useState(false);
   const [scrollTopo, setScrollTopo] = useState(false);
 
   useEffect(() => {
@@ -38,10 +39,23 @@ function Topo() {
 
       <nav className={`menu ${menuAberto ? "ativo" : ""}`}>
         <Link to="/">Página Inicial</Link>
-        <Link to="/Institucional">Institucional</Link>
+
+        <div
+          className="menu-institucional"
+          onMouseEnter={() => setSubmenuAberto(true)}
+          onMouseLeave={() => setSubmenuAberto(false)}
+        >
+          <span>Institucional</span>
+          <div className={`submenu ${submenuAberto ? "ativo" : ""}`}>
+            <Link to="/Institucional/QuemSomos">Quem Somos</Link>
+            <Link to="/Institucional/Fundadora">Fundadora</Link>
+            <Link to="/Institucional/Baluarte">Baluarte</Link>
+          </div>
+        </div>
+
         <Link to="/NossosProjetos">Nossos Projetos</Link>
         <Link to="/NossaMissao">Nossa Missão</Link>
-        <Link to="/Doador">Seja um Doador</Link>
+        <Link to="/Doador">Seja um Benfeitor</Link>
       </nav>
     </header>
   );

@@ -1,0 +1,94 @@
+/* === Quem Somos - Container Geral === */
+.quemsomos-container {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+   padding: 0 10% 60px 10%; /* padding-bottom de 60px */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+
+
+.quemsomos-content {
+  position: relative;
+  z-index: 2;
+  width: 50%;
+  padding-top: 40px;
+}
+
+.quemsomos-content h1 {
+  font-size: 2.5rem;
+  color: #111;
+  margin-bottom: 10px;
+  font-family: "Amatic SC", cursive; 
+}
+
+.quemsomos-content p {
+  font-size: 1.1rem;
+  color: #111;
+  line-height: 1.6;
+}
+
+.quemsomos-image {
+  position: relative;
+  z-index: 2;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+}
+
+.quemsomos-image img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 10px; 
+  margin-top: 25px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1024px) {
+  .quemsomos-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 5%;
+  }
+
+  .quemsomos-content,
+  .quemsomos-image {
+    width: 100%;
+  }
+
+  .quemsomos-content h1 {
+    font-size: 2rem;
+  }
+
+  .quemsomos-content p {
+    font-size: 1rem;
+  }
+
+  .quemsomos-image {
+    padding-top: 20px;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quemsomos-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .quemsomos-content p {
+    font-size: 0.9rem;
+  }
+
+  .quemsomos-image img {
+    max-width: 200px;
+  }
+}
