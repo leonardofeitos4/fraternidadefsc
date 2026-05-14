@@ -58,6 +58,9 @@ function Topo() {
             <NavLink to="/NossaMissao" className={({ isActive }) => `nav-link${isActive ? " nav-link--ativo" : ""}`} onClick={fechar}>
               Nossa Missão
             </NavLink>
+            <NavLink to="/Galeria" className={({ isActive }) => `nav-link${isActive ? " nav-link--ativo" : ""}`} onClick={fechar}>
+              Galeria
+            </NavLink>
             <Link to="/Doador" className="nav-link nav-link--cta" onClick={fechar}>
               Seja Benfeitor
             </Link>

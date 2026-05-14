@@ -357,7 +357,7 @@ function DoacaoSection() {
             <li>✔ Impacto real e mensurável</li>
           </ul>
           <div className="doacao-btns">
-            <a href="#pix-section" className="btn-dourado">📱 Doar via PIX</a>
+            <Link to="/Doador" className="btn-dourado">📱 Doar via PIX</Link>
             <Link to="/Doador" className="btn-outline-marrom">Ser benfeitor mensal</Link>
           </div>
         </div>

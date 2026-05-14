@@ -1,0 +1,132 @@
+.al-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--marrom-escuro) 0%, var(--marrom) 100%);
+  padding: 24px;
+}
+
+.al-card {
+  background: var(--branco);
+  border-radius: 20px;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.25);
+}
+
+.al-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.al-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: var(--marrom-escuro);
+  padding: 12px;
+  margin: 0 auto 20px;
+}
+
+.al-header h1 {
+  font-size: 1.5rem;
+  color: var(--marrom-escuro);
+  margin-bottom: 4px;
+}
+
+.al-header p {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+.al-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.al-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.al-field label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+
+.al-field input {
+  padding: 13px 16px;
+  border: 1.5px solid rgba(119, 73, 34, 0.2);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: var(--sans);
+  color: var(--texto);
+  background: var(--bege-claro);
+  transition: border-color 0.25s;
+  outline: none;
+}
+
+.al-field input:focus {
+  border-color: var(--dourado);
+  background: #fff;
+}
+
+.al-erro {
+  font-size: 0.85rem;
+  color: #c0392b;
+  background: #fdf0ed;
+  border: 1px solid #f5c6c0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  text-align: center;
+}
+
+.al-btn {
+  margin-top: 4px;
+  padding: 15px;
+  background: var(--marrom-escuro);
+  color: var(--branco);
+  border: none;
+  border-radius: 50px;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--trans);
+}
+
+.al-btn:hover:not(:disabled) {
+  background: var(--marrom);
+}
+
+.al-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.al-back {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+.al-back a {
+  color: var(--marrom);
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.al-back a:hover {
+  color: var(--dourado);
+}

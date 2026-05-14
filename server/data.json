@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@fraternidade.com",
+      "password_hash": "$2a$10$/qwO4mY47ZdHagHZwT84x.Xgh9AVtTpc6dCphcgrT72wyxBr6sCgC"
+    }
+  ],
+  "galeria": [
+    {
+      "titulo": "awefa",
+      "descricao": "awefaew",
+      "categoria": "Geral",
+      "imageUrl": "/uploads/galeria/1778718030337_screenshot-2026-05-08_17-01-02.png",
+      "id": 1,
+      "createdAt": 1778718030344
+    }
+  ],
+  "membros": [],
+  "projetos": []
+}

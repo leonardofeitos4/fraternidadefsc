@@ -1,0 +1,550 @@
+.ad-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bege-claro);
+}
+
+/* ── SIDEBAR ── */
+.ad-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: var(--marrom-escuro);
+  display: flex;
+  flex-direction: column;
+  padding: 28px 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.ad-sidebar-top {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.ad-sidebar-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  padding: 10px;
+  object-fit: contain;
+  margin: 0 auto 12px;
+}
+
+.ad-sidebar-title {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.ad-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.ad-nav-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.65);
+  text-align: left;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ad-nav-btn:hover {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+.ad-nav-btn.active {
+  background: var(--dourado);
+  color: var(--marrom-escuro);
+}
+
+.ad-sidebar-footer {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ad-user-email {
+  color: rgba(255,255,255,0.45);
+  font-size: 0.75rem;
+  word-break: break-all;
+}
+
+.ad-btn-sair {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.75);
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ad-btn-sair:hover {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+.ad-link-site {
+  color: var(--dourado-claro);
+  font-size: 0.78rem;
+  text-align: center;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.ad-link-site:hover { opacity: 1; }
+
+/* ── MAIN ── */
+.ad-main {
+  flex: 1;
+  padding: 40px;
+  min-width: 0;
+}
+
+/* ── TAB CONTENT ── */
+.ad-tab-content {
+  max-width: 960px;
+}
+
+.ad-section-title {
+  font-size: 1.8rem;
+  color: var(--marrom-escuro);
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--dourado);
+}
+
+/* ── FORM ── */
+.ad-form {
+  background: var(--branco);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 40px;
+  box-shadow: var(--sombra);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ad-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.ad-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ad-field label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+
+.ad-field input,
+.ad-field textarea,
+.ad-field select {
+  padding: 11px 14px;
+  border: 1.5px solid rgba(119,73,34,0.2);
+  border-radius: 10px;
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  color: var(--texto);
+  background: var(--bege-claro);
+  outline: none;
+  transition: border-color 0.2s;
+  resize: vertical;
+}
+
+.ad-field input:focus,
+.ad-field textarea:focus,
+.ad-field select:focus {
+  border-color: var(--dourado);
+  background: #fff;
+}
+
+/* Upload area */
+.ad-upload-area {
+  border: 2px dashed rgba(119,73,34,0.3);
+  border-radius: 12px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.ad-upload-area:hover {
+  border-color: var(--dourado);
+  background: var(--dourado-brilho);
+}
+
+.ad-upload-area span {
+  color: var(--texto-suave);
+  font-size: 0.88rem;
+}
+
+.ad-upload-small { min-height: 80px; }
+
+.ad-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 200px;
+}
+
+/* Progress */
+.ad-progress-wrap {
+  background: var(--bege);
+  border-radius: 50px;
+  height: 28px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+}
+
+.ad-progress-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: var(--dourado);
+  transition: width 0.3s;
+  border-radius: 50px;
+}
+
+.ad-progress-wrap span {
+  position: relative;
+  z-index: 1;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--marrom-escuro);
+}
+
+/* Error */
+.ad-erro {
+  color: #c0392b;
+  background: #fdf0ed;
+  border: 1px solid #f5c6c0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.85rem;
+}
+
+/* Empty */
+.ad-empty {
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+  padding: 24px 0;
+}
+
+/* Primary button */
+.ad-btn-primary {
+  align-self: flex-start;
+  padding: 13px 32px;
+  background: var(--marrom-escuro);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--trans);
+}
+
+.ad-btn-primary:hover:not(:disabled) { background: var(--marrom); }
+.ad-btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Delete button */
+.ad-btn-delete {
+  background: #fdf0ed;
+  border: 1px solid #f5c6c0;
+  color: #c0392b;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ad-btn-delete:hover { background: #c0392b; color: #fff; border-color: #c0392b; }
+
+/* Badge */
+.ad-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 50px;
+  background: var(--dourado);
+  color: var(--marrom-escuro);
+}
+
+/* ── GALERIA GRID ── */
+.ad-grid {
+  columns: 3;
+  column-gap: 16px;
+}
+
+.ad-media-card {
+  break-inside: avoid;
+  background: var(--branco);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.ad-media-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.ad-media-img img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+}
+
+.ad-media-card:hover .ad-media-img img { transform: scale(1.04); }
+
+.ad-media-img .ad-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.ad-media-info {
+  padding: 12px 14px;
+}
+
+.ad-media-info strong {
+  font-size: 0.9rem;
+  color: var(--marrom-escuro);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.ad-media-info p {
+  font-size: 0.82rem;
+  color: var(--texto-suave);
+}
+
+.ad-media-card .ad-btn-delete {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* ── MEMBROS LISTA ── */
+.ad-membros-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ad-membro-card {
+  background: var(--branco);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: var(--sombra);
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+}
+
+.ad-membro-foto {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--dourado);
+}
+
+.ad-membro-sem-foto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--marrom-escuro);
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: var(--serif);
+}
+
+.ad-membro-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.ad-membro-info strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--marrom-escuro);
+  margin-bottom: 2px;
+}
+
+.ad-membro-info span {
+  font-size: 0.8rem;
+  color: var(--dourado);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.ad-membro-info p {
+  font-size: 0.87rem;
+  color: var(--texto-suave);
+  line-height: 1.5;
+}
+
+.ad-membro-card .ad-btn-delete {
+  align-self: center;
+}
+
+/* ── PROJETOS LISTA ── */
+.ad-projetos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ad-projeto-card {
+  background: var(--branco);
+  border-radius: 12px;
+  box-shadow: var(--sombra);
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  gap: 20px;
+  overflow: hidden;
+  align-items: start;
+}
+
+.ad-projeto-img {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.ad-projeto-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ad-projeto-img .ad-badge {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+}
+
+.ad-projeto-info {
+  padding: 16px 0;
+}
+
+.ad-projeto-info strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--marrom-escuro);
+  margin-bottom: 6px;
+}
+
+.ad-projeto-info p {
+  font-size: 0.86rem;
+  color: var(--texto-suave);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.ad-projeto-info ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.ad-projeto-info ul li {
+  font-size: 0.75rem;
+  background: var(--bege);
+  color: var(--marrom);
+  padding: 3px 10px;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.ad-projeto-card .ad-btn-delete {
+  align-self: center;
+  margin-right: 16px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .ad-layout { flex-direction: column; }
+
+  .ad-sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+  }
+
+  .ad-sidebar-top { margin-bottom: 0; display: flex; align-items: center; gap: 10px; }
+  .ad-sidebar-nav { flex-direction: row; flex: 1; }
+  .ad-sidebar-footer { margin-top: 0; padding-top: 0; border-top: none; flex-direction: row; flex-wrap: wrap; }
+
+  .ad-main { padding: 24px 16px; }
+  .ad-grid { columns: 2; }
+  .ad-form-row { grid-template-columns: 1fr; }
+  .ad-projeto-card { grid-template-columns: 100px 1fr auto; }
+}
+
+@media (max-width: 540px) {
+  .ad-grid { columns: 1; }
+}

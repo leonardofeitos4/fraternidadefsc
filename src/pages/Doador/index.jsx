@@ -6,10 +6,10 @@ import Pix    from "../../assets/img/pix.svg";
 import Irmas3 from "../../assets/img/Irmas3.jpg";
 
 const IMPACTOS = [
-  { valor: "R$ 25",  icon: "🍚", desc: "Alimenta uma família por uma semana" },
-  { valor: "R$ 50",  icon: "📚", desc: "Financia materiais para uma criança por um mês" },
-  { valor: "R$ 100", icon: "👩‍🎓", desc: "Custeia uma oficina de capacitação profissional" },
-  { valor: "R$ 250", icon: "🏠", desc: "Apoia uma família em vulnerabilidade por um mês" },
+  { icon: "🍚", desc: "Alimenta uma família por uma semana" },
+  { icon: "📚", desc: "Financia materiais para uma criança por um mês" },
+  { icon: "👩‍🎓", desc: "Custeia uma oficina de capacitação profissional" },
+  { icon: "🏠", desc: "Apoia uma família em vulnerabilidade por um mês" },
 ];
 
 const BENEFICIOS = [
@@ -26,6 +26,10 @@ const FAQ = [
   { p: "Posso fazer uma doação em nome de outra pessoa?", r: "Sim! É uma bela forma de presentear alguém ou honrar a memória de um ente querido. Entre em contato para combinarmos os detalhes." },
 ];
 
+function scrollPara(id) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+}
+
 export default function Doador() {
   useScrollReveal();
   const [faqAberto, setFaqAberto] = useState(null);
@@ -41,7 +45,7 @@ export default function Doador() {
           <h1>Seja um Benfeitor</h1>
           <div className="gold-line center" />
           <p>Sua doação não é só dinheiro.<br />É esperança concreta na vida de quem mais precisa.</p>
-          <a href="#doe-agora" className="btn-dourado">❤ Quero Ajudar Agora</a>
+          <button className="btn-dourado" onClick={() => scrollPara('doe-agora')}>❤ Quero Ajudar Agora</button>
         </div>
       </section>
 
@@ -201,7 +205,7 @@ export default function Doador() {
           <h2>Pronto para fazer a diferença?</h2>
           <p>Sua generosidade é a mão de Deus chegando até quem precisa. Obrigado por ser parte dessa missão.</p>
           <div className="dcf-btns">
-            <a href="#doe-agora" className="btn-dourado">❤ Fazer minha doação</a>
+            <button className="btn-dourado" onClick={() => scrollPara('doe-agora')}>❤ Fazer minha doação</button>
             <a
               href="https://api.whatsapp.com/send/?phone=5583991853511"
               target="_blank"

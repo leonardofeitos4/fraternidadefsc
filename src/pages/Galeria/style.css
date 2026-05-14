@@ -1,0 +1,331 @@
+/* ══════════════════════════════════════
+   GALERIA — FEED
+══════════════════════════════════════ */
+
+.gl-page { min-height: 100vh; background: #f5f0eb; }
+
+/* ── HERO ── */
+.gl-hero {
+  position: relative;
+  padding-top: 80px;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--marrom-escuro) 0%, var(--marrom) 100%);
+  text-align: center;
+  overflow: hidden;
+}
+
+.gl-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(201,168,76,0.18) 0%, transparent 70%);
+}
+
+.gl-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 48px 24px;
+  max-width: 600px;
+}
+
+.gl-hero-content h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.gl-hero-content > p {
+  color: rgba(255,255,255,0.75);
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
+/* ── FILTROS ── */
+.gl-filtros-wrap {
+  background: #fff;
+  border-bottom: 1px solid rgba(119,73,34,0.12);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.gl-filtros {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.gl-filtros::-webkit-scrollbar { display: none; }
+
+.gl-filtro-btn {
+  flex-shrink: 0;
+  padding: 7px 18px;
+  border-radius: 50px;
+  border: 1.5px solid rgba(119,73,34,0.22);
+  background: transparent;
+  color: var(--texto-suave);
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--trans);
+  white-space: nowrap;
+}
+
+.gl-filtro-btn:hover {
+  border-color: var(--dourado);
+  color: var(--marrom);
+}
+
+.gl-filtro-btn.ativo {
+  background: var(--marrom-escuro);
+  border-color: var(--marrom-escuro);
+  color: #fff;
+}
+
+/* ── FEED SECTION ── */
+.gl-feed-section {
+  padding: 28px 16px 80px;
+}
+
+/* Loading */
+.gl-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  gap: 20px;
+  color: var(--texto-suave);
+}
+
+.gl-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba(119,73,34,0.15);
+  border-top-color: var(--dourado);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Vazio */
+.gl-vazio {
+  text-align: center;
+  padding: 80px 24px;
+}
+
+.gl-vazio p { font-size: 1.1rem; color: var(--texto-suave); }
+.gl-vazio-sub { font-size: 0.9rem !important; margin-top: 8px; opacity: 0.7; }
+
+/* ── FEED ── */
+.gl-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ── POST CARD ── */
+.gl-post {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 14px rgba(74,44,26,0.09);
+  transition: box-shadow 0.25s ease;
+}
+
+.gl-post:hover {
+  box-shadow: 0 6px 28px rgba(74,44,26,0.14);
+}
+
+/* Cabeçalho */
+.gl-post-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+}
+
+.gl-post-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--marrom-escuro);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+}
+
+.gl-post-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.gl-post-meta {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.gl-post-autor {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--marrom-escuro);
+  line-height: 1.2;
+}
+
+.gl-post-data {
+  font-size: 0.72rem;
+  color: var(--texto-suave);
+  margin-top: 1px;
+}
+
+/* Imagem */
+.gl-post-img {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  cursor: pointer;
+  background: #f0e8de;
+}
+
+.gl-post-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gl-post:hover .gl-post-img img {
+  transform: scale(1.04);
+}
+
+/* Rodapé */
+.gl-post-body {
+  padding: 12px 14px 16px;
+}
+
+.gl-post-titulo {
+  font-size: 0.93rem;
+  font-weight: 700;
+  color: var(--marrom-escuro);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.gl-post-desc {
+  font-size: 0.82rem;
+  color: var(--texto-suave);
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+/* Badge */
+.gl-badge {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 50px;
+  background: var(--dourado);
+  color: var(--marrom-escuro);
+  flex-shrink: 0;
+}
+
+/* ── LIGHTBOX ── */
+.gl-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(20, 10, 5, 0.93);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.gl-lb-close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  z-index: 1001;
+}
+
+.gl-lb-close:hover { background: rgba(255,255,255,0.2); }
+
+.gl-lb-inner {
+  max-width: 860px;
+  width: 100%;
+  animation: zoomIn 0.25s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.94); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+.gl-lb-inner img {
+  width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: 12px;
+  display: block;
+}
+
+.gl-lb-info {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.gl-lb-info h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: var(--serif);
+  margin-top: 8px;
+}
+
+.gl-lb-info p {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 640px) {
+  .gl-feed-section { padding: 16px 0 60px; }
+  .gl-feed { gap: 12px; }
+  .gl-post { border-radius: 0; box-shadow: none; border-bottom: 1px solid rgba(119,73,34,0.1); }
+  .gl-post:last-child { border-bottom: none; }
+}
